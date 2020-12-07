@@ -1,0 +1,7 @@
+body {
+    background: rgb(15, 15, 19);
+}
+.container.full {
+    width: clamp(15rem, 80vw, 1600px);
+    background: rgb(34, 33, 41);
+}

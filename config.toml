@@ -1,0 +1,36 @@
+baseURL = "https://blog.seb7.fr/"
+languageCode = "fr-fr"
+title = "SebSept Dev Blog"
+theme = "terminal"
+
+[params]
+contentTypeName = "post"
+themeColor = "orange"
+showMenuItems = 2
+fullWidthTheme = true
+centerTheme = true
+
+[languages]
+[languages.fr]
+title = "SebSept Dev Blog"
+subtitle = "Quelques informations sur mes aventures de developeur php."
+keywords = ""
+copyright = ""
+menuMore = "Suite"
+readMore = "Suite..."
+readOtherPosts = "Autres notes"
+
+[languages.en.params.logo]
+logoText = "SebSept Dev Blog"
+logoHomeLink = "/"
+
+[languages.en.menu]
+[[languages.en.menu.main]]
+identifier = "a-propos"
+name = "A propos"
+url = "/a-propos"
+
+[[languages.en.menu.main]]
+identifier = "legal"
+name = "Mentions légales"
+url = "/legal"
