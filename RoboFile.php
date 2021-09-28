@@ -10,6 +10,7 @@ class RoboFile extends \Robo\Tasks
 {
     public function deploy()
     {
+        $this->taskExec('hugo')->run(); // génération des contenus
         $this->taskExec('rsync -rz public/ dev.seb7.fr:/var/www/seb7.fr/blog')->run();
     }
 
