@@ -1,10 +1,7 @@
-baseURL = "https://blog.seb7.fr/"
-#baseURL = "http://0.0.0.0:8000/"
-#title = "SebSept Dev Blog"
-#theme = "terminal"
-#theme = "beautifulhugo-master"
-theme = "fuji"
+baseURL = "https://github.dsrkafuu.net/hugo-theme-fuji/"
+title = "Hugo Theme Fuji"
 
+theme = "fuji"
 hasCJKLanguage = true
 enableEmoji = true
 enableRobotsTXT = true
@@ -12,36 +9,11 @@ disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 
 ## Change this two to switch between different language
-languageCode = "fr-fr"           # For RSS, view https://www.rssboard.org/rss-language-codes
-defaultContentLanguage = "fr" # For HTML page, now support: en, zh-hans, zh-hant, ja, nl, pl, it
-
-[languages]
-[languages.fr]
-title = "SebSept Dev Blog"
-subtitle = "Quelques informations sur mes aventures de developeur php."
-keywords = ""
-copyright = ""
-#menuMore = "Suite"
-#readMore = "Suite..."
-#readOtherPosts = "Autres notes"
-#
-#[languages.en.params.logo]
-#logoText = "SebSept Dev Blog"
-#logoHomeLink = "/"
-#
-#[languages.en.menu]
-#[[languages.en.menu.main]]
-#identifier = "a-propos"
-#name = "A propos"
-#url = "/a-propos"
-#
-#[[languages.en.menu.main]]
-#identifier = "legal"
-#name = "Mentions légales"
-#url = "/legal"
+languageCode = "en"           # For RSS, view https://www.rssboard.org/rss-language-codes
+defaultContentLanguage = "en" # For HTML page, now support: en, zh-hans, zh-hant, ja, nl, pl, it
 
 summaryLength = 100 # Custom summary length, add <!--more--> in post file to custom split point
-paginate = 30
+paginate = 10
 
 # googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here
 
@@ -59,12 +31,12 @@ home = ["HTML", "RSS", "SearchIndex"]
 post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
 
 [params]
-author = "Sébastien Monterisi"                # You can also set author in post front matter individually
-subTitle = "Quelques notes sur mes aventures de developeur php."
+author = "DSRKafuU"                # You can also set author in post front matter individually
+subTitle = "A minimal Hugo theme."
 defaultTheme = "auto"              # default theme when first visit (auto|dark|light)
 
 # Source URL of the website, will appear in the footer
-#sourceURL = "https://github.com/dsrkafuu/hugo-theme-fuji"
+sourceURL = "https://github.com/dsrkafuu/hugo-theme-fuji"
 
 # Use CloudFlare Workers to accelerate the Google Analytics
 # If you are using this please comment the googleAnalytics above
@@ -78,21 +50,21 @@ defaultTheme = "auto"              # default theme when first visit (auto|dark|l
 
 # Word counter and read time indicator in post metadata
 showWordCounter = true
-showReadTime = true
+showReadTime = false
 
 # License in the footer
 showLicenseInFooter = false
 
 # License at the end of each post
-showLicense = false
-showToc = false
+showLicense = true
+showToc = true
 
 # Copyright
-copyrightStartYear = "2022"
+copyrightStartYear = "2020"
 
 # Open Graph & Twitter Card variables
 # You can also set description and images in post front matter individually
-description = "SebSept Dev Blog -Quelques informations sur mes aventures de developeur php."
+description = "A minimal Hugo theme with nice theme color."
 og = "/img/og.png"                                          # This will use the image called og.png in static/img folder
 
 # Posts shown in homepage
@@ -143,21 +115,21 @@ endLevel = 3
 tag = "tags"
 
 [menu]
-#[[menu.nav]]
-#name = "Home"
-#url = "/"
-#weight = 1
-#[[menu.nav]]
-#name = "Archives"
-#url = "/archives/"
-#weight = 2
 [[menu.nav]]
-name = "A Propos"
-url = "/a-propos/"
+name = "Home"
+url = "/"
+weight = 1
+[[menu.nav]]
+name = "Archives"
+url = "/archives/"
+weight = 2
+[[menu.nav]]
+name = "About"
+url = "/about/"
 weight = 3
 [[menu.nav]]
-name = "Légal"
-url = "/legal/"
+name = "Search"
+url = "/search/"
 weight = 4
 [[menu.nav]]
 name = "RSS"
@@ -166,16 +138,16 @@ weight = 5
 
 [[menu.link]]
 name = "GitHub"
-url = "https://github.com/SebSept"
+url = "https://github.com/dsrkafuu"
 weight = 1
 [[menu.link]]
 name = "Twitter"
-url = "https://twitter.com/seb_sept"
+url = "https://twitter.com/dsrkafuu"
 weight = 2
-#[[menu.link]]
-#name = "bilibili"
-#url = "https://space.bilibili.com/19767474"
-#weight = 3
+[[menu.link]]
+name = "bilibili"
+url = "https://space.bilibili.com/19767474"
+weight = 3
 
 [build]
 noJSConfigInAssets = true

@@ -22,4 +22,12 @@ class RoboFile extends \Robo\Tasks
         $this->taskExec("hugo list drafts")->run();
         $this->taskExec("hugo serve")->run();
     }
+
+    /**
+     * @param string $postFileName Nom du fichier du post.
+     */
+    public function newPost(string $postFileName) {
+        $this->taskExec("hugo new $postFileName")->run();
+        $this->taskExec("phpstorm content/$postFileName")->run();
+    }
 }
