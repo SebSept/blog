@@ -18,7 +18,7 @@ defaultContentLanguage = "fr" # For HTML page, now support: en, zh-hans, zh-hant
 [languages]
 [languages.fr]
 title = "SebSept Dev Blog"
-subtitle = "Quelques informations sur mes aventures de developeur php."
+subtitle = "Quelques notes de developeur php."
 keywords = ""
 copyright = ""
 #menuMore = "Suite"
@@ -60,8 +60,8 @@ post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
 
 [params]
 author = "Sébastien Monterisi"                # You can also set author in post front matter individually
-subTitle = "Quelques notes sur mes aventures de developeur php."
-defaultTheme = "auto"              # default theme when first visit (auto|dark|light)
+#subTitle = "Quelques notes de developeur php."
+defaultTheme = "dark"              # default theme when first visit (auto|dark|light)
 
 # Source URL of the website, will appear in the footer
 #sourceURL = "https://github.com/dsrkafuu/hugo-theme-fuji"
