@@ -56,7 +56,7 @@ path = "/search/"
 home = ["HTML", "RSS", "SearchIndex"]
 
 [permalinks]
-post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
+post = "/:slug/" # Custom post links, e.g. "/:year/:month/:title/"
 
 [params]
 author = "Sébastien Monterisi"                # You can also set author in post front matter individually
