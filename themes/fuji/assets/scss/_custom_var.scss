@@ -1,6 +1,3 @@
-// Override variables with that file
-@import '_custom'; // Keep that for back-compatibility. This shouldn't be used anymore.
-
 $dark-color-primary: #4ea483;; // https://irocore.com/aofuji/
 $dark-color-secondary: #45c5a3; // kai https://irocore.com/fujimurasaki/
 
@@ -8,21 +5,17 @@ $dark-color-bg: #17191c;
 $dark-header-bg: #132d2d;
 $dark-color-divider: #222;
 $dark-highlight: adjust-hue(lighten($dark-header-bg, 60), -120);
-$mon-jaune: #c5c345;
+$mon-jaune: #f3ec78;
 
 @mixin lighting-border {
-  //border:none;
-  border-image-source: linear-gradient(to left, $dark-color-divider, $dark-highlight, $dark-color-divider );
+  border:none;
+  border-image-source: linear-gradient(to left, $dark-header-bg, $dark-highlight, $dark-header-bg );
   border-image-slice: 1;
 }
 
-body header a:hover
-{
-  color: $mon-jaune;
+@mixin text-degrade {
+  background: linear-gradient(45deg, $dark-color-secondary, $mon-jaune);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
 }
-
-footer, header {
-  background: $dark-header-bg;
-  @include lighting-border;
-}
-

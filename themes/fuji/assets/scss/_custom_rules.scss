@@ -1,1 +1,32 @@
 // Override CSS rules with that file
+@import '_custom_var';
+
+//body header a:hover
+//{
+//  color: $mon-jaune;
+//}
+
+footer, header {
+  background: $dark-header-bg;
+  @include lighting-border;
+}
+
+header {
+  border-bottom:1px solid;
+}
+
+footer {
+  border-top:1px solid;
+}
+
+header h1 {
+  @include text-degrade;
+  font-size: clamp(2rem,10vw,3rem);
+}
+
+.post-title:hover {
+  @include text-degrade;
+  //@include lighting-border;
+  //border-bottom: 1px solid;
+}
+

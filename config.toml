@@ -152,9 +152,13 @@ tag = "tags"
 #url = "/archives/"
 #weight = 2
 [[menu.nav]]
-name = "A Propos"
-url = "/a-propos/"
-weight = 3
+name = "Stack"
+url = "/stack"
+weight = 2
+#[[menu.nav]]
+#name = "A Propos"
+#url = "/a-propos/"
+#weight = 3
 [[menu.nav]]
 name = "Légal"
 url = "/legal/"
