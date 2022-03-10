@@ -5,4 +5,24 @@ $dark-color-primary: #4ea483;; // https://irocore.com/aofuji/
 $dark-color-secondary: #45c5a3; // kai https://irocore.com/fujimurasaki/
 
 $dark-color-bg: #17191c;
-$dark-color-divider: #111; // Discord
+$dark-header-bg: #132d2d;
+$dark-color-divider: #222;
+$dark-highlight: adjust-hue(lighten($dark-header-bg, 60), -120);
+$mon-jaune: #c5c345;
+
+@mixin lighting-border {
+  //border:none;
+  border-image-source: linear-gradient(to left, $dark-color-divider, $dark-highlight, $dark-color-divider );
+  border-image-slice: 1;
+}
+
+body header a:hover
+{
+  color: $mon-jaune;
+}
+
+footer, header {
+  background: $dark-header-bg;
+  @include lighting-border;
+}
+
