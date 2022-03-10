@@ -8,6 +8,7 @@ git_push:
 	#git push github master
 
 publish:
+	hugo
 	rsync -rz public/ dev.seb7.fr:/var/www/seb7.fr/blog
 
 #publish: git_push deploy
@@ -18,8 +19,8 @@ new:
 
 test:
 	hugo serve 1> /dev/null &
+	firefox http://localhost:1313/ &
 	hugo --watch
-	firefox http://localhost:1313/
 
 stop_test:
 	killall hugo
