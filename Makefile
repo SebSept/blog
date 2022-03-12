@@ -8,8 +8,9 @@ git_push:
 	#git push github master
 
 publish:
+	rm -rf public/*
 	hugo
-	rsync -rz public/ dev.seb7.fr:/var/www/seb7.fr/blog
+	rsync --recursive --compress --delete public/ dev.seb7.fr:/var/www/seb7.fr/blog
 
 new:
 	@read -p "Titre du nouveau post : " title; hugo new "$$title"; vim "/home/http/perso/seb7.fr/blog/content/$$title"
@@ -18,7 +19,7 @@ new:
 test:
 	hugo serve 1> /dev/null &
 	firefox http://localhost:1313/ &
-	hugo --watch
+	hugo --watch -D
 
 stop_test:
 	killall hugo
