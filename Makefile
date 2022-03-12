@@ -11,8 +11,6 @@ publish:
 	hugo
 	rsync -rz public/ dev.seb7.fr:/var/www/seb7.fr/blog
 
-#publish: git_push deploy
-
 new:
 	@read -p "Titre du nouveau post : " title; hugo new "$$title"; vim "/home/http/perso/seb7.fr/blog/content/$$title"
 	hugo
@@ -24,6 +22,3 @@ test:
 
 stop_test:
 	killall hugo
-
-generate:
-	hugo
