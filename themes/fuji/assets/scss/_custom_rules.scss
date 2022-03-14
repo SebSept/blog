@@ -12,21 +12,31 @@ footer, header {
 }
 
 header {
-  border-bottom:1px solid;
+  border-bottom: 1px solid;
 }
 
 footer {
-  border-top:1px solid;
+  border-top: 1px solid;
 }
 
 header h1 {
   @include text-degrade;
-  font-size: clamp(2rem,10vw,3rem);
+  font-size: clamp(2rem, 10vw, 3rem);
 }
 
 .post-title:hover {
   @include text-degrade;
   //@include lighting-border;
   //border-bottom: 1px solid;
+}
+
+span.tag,
+a.tag-inline {
+  //border: 1px solid $dark-header-bg;
+  //border-radius: 5px;
+  padding: $spacer-1;
+  margin: $spacer-0;
+  background: $dark-color-bg;
+  display: inline-block;
 }
 

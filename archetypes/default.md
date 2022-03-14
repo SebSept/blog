@@ -3,10 +3,10 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
 tags: []
-slug:  
+slug: "{{ .Name | urlize }}" 
 ---
 
-Résumé (dans les listes + dans le post)
+Résumé
 
 <!-- more -->
 

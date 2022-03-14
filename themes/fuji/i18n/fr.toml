@@ -5,7 +5,7 @@
     other = "Pages"
 
 [sidebarTags]
-    other = "Étiquettes"
+    other = "Tags"
 
 [sidebarLinks]
     other = "Liens"
@@ -20,7 +20,7 @@
     other = " "
 
 [postMetaNoTag]
-    other = "Aucune étiquette"
+    other = "Aucun tag"
 
 [postMetaWordCount]
     one = "{{.Count}} mot"
@@ -43,7 +43,7 @@
     other = "Posts totaux: "
 
 [tagsCurrentTag]
-    other = "Posts avec l'étiquette {{ .Title }}: "
+    other = "Posts avec le tag {{ .Title }}: "
 
 [searchSuccess]
     other = "[NUM] résultats ([TIME] ms)"
