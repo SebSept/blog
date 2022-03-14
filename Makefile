@@ -13,7 +13,16 @@ publish:
 	rsync --recursive --compress --delete public/ dev.seb7.fr:/var/www/seb7.fr/blog
 
 new:
-	@read -p "Titre du nouveau post : " title; hugo new "$$title"; vim "/home/http/perso/seb7.fr/blog/content/$$title"
+	@read -p "Titre du nouveau post : " title;\
+		source ./tools/venv/bin/activate;\
+		DIR="post/"$$(date +"%Y-%m-%d");\
+		SLUG=$$(echo "$$title" | ./tools/slug.py);\
+		FULL_PATH="$${DIR}/$${SLUG}.md";\
+		hugo new "$$FULL_PATH" --editor phpstorm -k post;
+	hugo
+
+# utile avant versionning - pour éviter les erreurs
+generate:
 	hugo
 
 test:
