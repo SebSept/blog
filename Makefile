@@ -26,7 +26,7 @@ generate:
 	hugo
 
 test:
-	hugo serve 1> /dev/null &
+	hugo serve -D 1> /dev/null &
 	firefox http://localhost:1313/ &
 	hugo --watch -D
 

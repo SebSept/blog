@@ -7,6 +7,14 @@ $dark-color-divider: #222;
 $dark-highlight: adjust-hue(lighten($dark-header-bg, 60), -120);
 $mon-jaune: #f3ec78;
 
+//$body-font-size: 18px;
+$h4-size: 18px;
+$font-size-0: 2.25rem; // 16px->32px
+$font-size-1: 2rem ; // 16px->28px #
+$font-size-2: 1.75rem ; // 16px->24px ##
+$font-size-3: 1.50rem ; // 16px->20px ###
+$font-size-4: 1.25rem ; // 16px->16px ####
+
 @mixin lighting-border {
   border:none;
   border-image-source: linear-gradient(to left, $dark-header-bg, $dark-highlight, $dark-header-bg );
