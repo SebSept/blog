@@ -44,6 +44,7 @@ pas besoin de tout y mettre.
 
 ### Les solutions alternatives
 
+- scripts composer
 - ide
 - document / note
 - alias sur les outils
