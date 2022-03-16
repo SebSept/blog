@@ -15,6 +15,16 @@ $font-size-2: 1.75rem ; // 16px->24px ##
 $font-size-3: 1.50rem ; // 16px->20px ###
 $font-size-4: 1.25rem ; // 16px->16px ####
 
+$width-lg: 1280px;
+
+$dark-color-codebg: opacify(darken($dark-header-bg, 8), 0.99);
+$dark-color-codebg-darker: opacify($dark-header-bg, 0.80);
+//linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)
+pre.language-php, pre.language-shell {
+  background: linear-gradient(15deg, $dark-color-codebg 50%, $dark-color-codebg-darker 100%);
+  //border:2px solid $dark-color-codebg;
+}
+
 @mixin lighting-border {
   border:none;
   border-image-source: linear-gradient(to left, $dark-header-bg, $dark-highlight, $dark-header-bg );
