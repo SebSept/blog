@@ -25,3 +25,9 @@ http://www.ovh.com
 
 Sébastien Monterisi  
 contact@seb7.fr
+
+## Copyrights 
+
+- Contenu des articles par Sébastien Monterisi (sauf mention contraire) sous [licence "CC BY-NC-SA 4.0"](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+- Thème graphique [Fuji-v2 de Dsrkafuu](https://github.com/dsrkafuu/hugo-theme-fuji/)
+- Contenu généré avec [Hugo](https://gohugo.io/)

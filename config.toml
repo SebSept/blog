@@ -81,7 +81,7 @@ showWordCounter = true
 showReadTime = true
 
 # License in the footer
-showLicenseInFooter = false
+showLicenseInFooter = true
 
 # License at the end of each post
 showLicense = false
