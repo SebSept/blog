@@ -4,6 +4,7 @@ date: 2022-03-14T13:50:03+01:00
 draft: false 
 tags: [securité, sql, prestashop]
 slug: sqlmap-tester-injections-sql-prestashop
+image: post/2022-03-14/ogimage.png
 ---
 
 Éprouvez la sécurité des modules PrestaShop avec Sqlmap.
