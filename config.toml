@@ -96,7 +96,7 @@ description = "SebSept Dev Blog -Quelques informations sur mes aventures de deve
 og = "/img/og.png"                                          # This will use the image called og.png in static/img folder
 
 # Posts shown in homepage
-mainSections = ["post"]
+mainSections = ["post","note"]
 
 # Bangumi image chart id
 # bgmImageChart = "000000"
