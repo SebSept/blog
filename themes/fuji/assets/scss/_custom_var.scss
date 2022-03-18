@@ -17,12 +17,21 @@ $font-size-4: 1.25rem ; // 16px->16px ####
 
 $width-lg: 1280px;
 
-$dark-color-codebg: opacify(darken($dark-header-bg, 8), 0.99);
-$dark-color-codebg-darker: opacify($dark-header-bg, 0.80);
+$dark-color-codebg: desaturate(opacify(darken($dark-header-bg, 8), 0.99), 100);
+$dark-color-codebg-darker: desaturate(opacify($dark-header-bg, 0.80), 100);
 //linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)
-pre.language-php, pre.language-shell {
-  background: linear-gradient(15deg, $dark-color-codebg 50%, $dark-color-codebg-darker 100%);
+pre.language-php,
+pre.language-shell,
+pre.language-twig,
+{
+  background: $dark-color-codebg-darker;
+  background: linear-gradient(-0deg, $dark-color-codebg 50%, $dark-color-codebg-darker 100%);
   //border:2px solid $dark-color-codebg;
+}
+
+span.tag,
+a.tag-inline {
+  background: transparent !important;
 }
 
 @mixin lighting-border {
@@ -32,7 +41,7 @@ pre.language-php, pre.language-shell {
 }
 
 @mixin text-degrade {
-  background: linear-gradient(45deg, $dark-color-secondary, $mon-jaune);
+  background: linear-gradient(-45deg, $dark-color-secondary, $mon-jaune);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-box-decoration-break: clone;
