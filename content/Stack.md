@@ -35,4 +35,15 @@ J'utilise [Firefox](https://www.mozilla.org/fr/firefox/browsers/compare/) 99,9% 
   - ...
   - ...
 
+## Php
+
+- gestionnaire de librairies : [composer](https://getcomposer.org/)
+- gestionnaire de librairies de dev : [Phive](https://phar.io/)
+
+## Autres langages
+
+- Python (actuellement, mars 2022, je débute). j'aime bien.
+- ...
+
 `@todo compléter`
+`@todo ajouter les liens vers les tags`

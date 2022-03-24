@@ -8,7 +8,7 @@ slug: "{{ .Name | urlize }}"
 
 Résumé
 
-<!-- more -->
+<!--more-->
 
 Dans le post uniquement
 
