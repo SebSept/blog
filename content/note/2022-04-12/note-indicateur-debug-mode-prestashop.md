@@ -17,7 +17,7 @@ Pour le dire autrement, ça permet de modifier le texte de l'_invit_ de commande
 
 Ici vous pouvez voir mon prompt :
 
-![Mon prompt personnalisé](/post/2022-04-12/prompt.webp "en mode debug")
+![Mon prompt personnalisé](/note/2022-04-12/prompt.webp "en mode debug")
 
 Pour le détail : 
 - _7.2_ : la version de php cli est cours
@@ -30,7 +30,7 @@ Avec ce caractère "bug" vert, je sais que le mode debug est activé.
 
 Si bascule de mode \_PS\_MODE_DEV\_ à `false`, il devient rouge :
 
-![Mon prompt personnalisé](/post/2022-04-12/prompt2.webp "en mode debug")
+![Mon prompt personnalisé](/note/2022-04-12/prompt2.webp "en mode debug")
 
 Et voilà.
 
