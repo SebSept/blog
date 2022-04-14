@@ -3,7 +3,7 @@ title: "Indicateur Debug Mode Prestashop dans le terminal."
 date: 2022-04-12T18:25:38+02:00
 draft: false 
 tags: ["prestashop", "shell", "fop_console"]
-slug: "note-indicateur-debug-mode-prestashop" 
+slug: "indicateur-debug-mode-starship-shell-prestashop" 
 ---
 
 Comment ajouter un indicateur à la ligne commande pour savoir si vous êtes en mode debug ou pas.
