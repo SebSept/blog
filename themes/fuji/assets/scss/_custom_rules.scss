@@ -24,7 +24,7 @@ header h1 {
   font-size: clamp(2rem, 10vw, 3rem);
 }
 
-.post-title a:hover {
+.post-title a {
   @include text-degrade;
   //@include lighting-border;
   //border-bottom: 1px solid;

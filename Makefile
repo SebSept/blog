@@ -1,10 +1,17 @@
 help:
-	# git_push : pousser sur github, suivi de deploy normalement
-	# publish : rsync sur dev.seb7.fr
-	# new : création d'un nouveau post
-	# test : afficher le blog : lance le serveur local et ouvre firefox
+	# make new : création d'un nouveau post
+	# make test : afficher le blog : lance le serveur local et ouvre firefox
+	# make generate : genaration des fichiers (pour éviter prob de versionning)
+	# make git_push : versionner, pousser sur github, suivi de publish normalement
+	# make publish : rsync sur blog.seb7.fr
+
+debug:
+	echo message : $$message
 
 git_push:
+	git add .
+	@read -p "message du commit : " message;\
+	git commit -m "$$message"
 	#git push github master
 
 publish:
@@ -16,9 +23,9 @@ new:
 	@read -p "Titre du nouveau post : " title;\
 		source ./tools/venv/bin/activate;\
 		DIR="post/"$$(date +"%Y-%m-%d");\
-		SLUG=$$(echo "$$title" | ./tools/slug.py);\
+		SLUG=$$title;\
 		FULL_PATH="$${DIR}/$${SLUG}.md";\
-		hugo new "$$FULL_PATH" --editor phpstorm -k post;
+		hugo new "$$FULL_PATH";# --editor phpstorm -k post;
 	hugo
 
 # utile avant versionning - pour éviter les erreurs
