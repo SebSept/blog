@@ -1,7 +1,6 @@
 help:
 	# make new : création d'un nouveau post
 	# make test : afficher le blog : lance le serveur local et ouvre firefox
-	# make generate : genaration des fichiers (pour éviter prob de versionning)
 	# make git_push : versionner, pousser sur github, suivi de publish normalement
 	# make publish : rsync sur blog.seb7.fr
 
@@ -10,6 +9,7 @@ debug:
 
 git_push:
 	git add .
+	git status
 	@read -p "message du commit : " message;\
 	git commit -m "$$message"
 	#git push github master
@@ -18,6 +18,7 @@ publish:
 	rm -rf public/*
 	hugo
 	rsync --recursive --compress --delete public/ dev.seb7.fr:/var/www/seb7.fr/blog
+	firefox https://blog.seb7.fr
 
 new:
 	@read -p "Titre du nouveau post : " title;\
@@ -29,8 +30,8 @@ new:
 	hugo
 
 # utile avant versionning - pour éviter les erreurs
-generate:
-	hugo
+#generate:
+#	hugo
 
 test:
 	hugo serve -D 1> /dev/null &
