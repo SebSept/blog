@@ -35,7 +35,7 @@ git_push:
 	#git push github master
 
 publish:
-	docker compose -f compose_build.yml
+	docker compose -f compose_build.yml up
 	rsync --recursive --compress --delete public/ dev.seb7.fr:/var/www/seb7.fr/blog
 	firefox https://blog.seb7.fr
 
