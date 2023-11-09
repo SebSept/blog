@@ -1,0 +1,6 @@
+services:
+  hugo:
+    extends:
+      file: compose_serve.yml
+      service: hugo
+    entrypoint: ["/bin/sh", "-c" , "rm -rf public/* && hugo"]

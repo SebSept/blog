@@ -1,1 +1,2 @@
 make help
+docker ps | begin; rg blog_hugo -q && echo 'Serveur Hugo déjà en route'; end || make serve
