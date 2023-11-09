@@ -40,7 +40,9 @@ Quelques points importants
 
 ## Le plan
 
-Mon plan c'est de suivre la formation et de pousser les contenus un peu plus loin, notament coté Symfony. Je profiterai de ne pas travailler pour réaliser des choses liées à Symfony. En plus de ma formation j'aurais de la matière pour démontrer mes compétences.  
+Mon plan c'est de suivre la formation et de pousser les contenus un peu plus loin, notament coté Symfony. Je profiterai de ne pas travailler pour réaliser des choses liées à Symfony. En plus de ma formation j'aurais de la matière pour démontrer mes compétences. 
+
+En parallèle, je vais me former à des technos un peu plus front pour compléter mes compétences, notament Reactjs et de l'autre plus infra avec Docker pour commencer. 
 
 Il me reste une quizaine de jours avant d'acceder aux contenus de formation, en attendant, je fais un peu de travail en freelance sur PrestaShop. J'ai en effet retrouvé des clients qui n'ont pas trouvé de developpeur PrestaShop qui leur convient pendant que je bossais chez 410-gone.
 
