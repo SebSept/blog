@@ -1,3 +1,5 @@
+.PHONY: new_note new_post git_push publish stop_serve
+
 help:
 	# Commandes
 	# make serve : afficher le blog : lance le serveur local et ouvre firefox
