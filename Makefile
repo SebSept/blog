@@ -34,7 +34,7 @@ git_push:
 	git status
 	@read -p "message du commit : " message;\
 	git commit -m "$$message"
-	#git push github master
+	git push github
 
 publish:
 	docker compose -f compose_build.yml up
