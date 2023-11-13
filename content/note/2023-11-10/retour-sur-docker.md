@@ -67,8 +67,82 @@ Pour le passage des signaux, quand on envoit un signal de fin d'execution (CTRL+
 
 ### On build
 
+Cette instruction permet d'executer des instructions lorsque l'image est utilisée pour construire une autre image. Je ne vois pas d'utilité pour moi actuellement, mais au besoin, je saurais que ça existe.  
+[Onbuild](https://docs.docker.com/engine/reference/builder/#onbuild).
+
 ### ARG
 
-### ADD/COPY
--> Application à Hugo dans un prochain article
+Permet de définir des variables dans un DockerFile, pour la construction de l'image (pas pour le container), pratique. Je connaissais déjà mais je vois maintenant bien la différence avec les variables d'environnement.  
+[ARG](https://docs.docker.com/engine/reference/builder/#arg).
 
+### ADD/COPY
+
+[ADD](https://docs.docker.com/engine/reference/builder/#add) et [COPY](https://docs.docker.com/engine/reference/builder/#copy) font fondamentalement la même chose, mais ADD est plus riche et permet d'ajouter des contenus distants, notament le contenu de dépots git en précisant la référence (tag, branche). On évite ainsi d'installer git dans l'image.  
+Pour les deux instructions, on peut préciser des droits et faire des liens symboliques.
+
+### RUN
+
+J'ai appris qu'il y avait une option `--mount` qui permet d'acceder aux fichiers, à des ressources distantes par ssh ou à des _secrets_ . Je n'ai pas encore joué avec cette option.
+
+### FROM
+
+La chose importante que j'ai appris c'est qu'on peut utiliser des images disponibles sur le net avec la forme `docker build url#ref:dir`. Pour un dépot git, on précisera la `ref` (ref git) et eventuellement le dossier (`:dir`).  On est donc pas tributaire ni du hub docker (ni de la mise en place d'un hub privé).  [build](https://docs.docker.com/engine/reference/commandline/build/#git-repositories).
+
+### Compose config
+
+Coté `docker compose` la chose importante, nouvelle pour moi, c'est la commande `docker compose convert`.  
+C'est commande permet de valider, reformater un fichier compose existant. La commande permet aussi de transformer le contenu en explicitant les paramètres.
+
+Si vous avez un compose_serve.yml comme ceci :
+
+```yaml
+services:
+  hugo:
+    ports:
+      - 1313:1414
+```
+
+Avec la `docker compose -f compose_serve.yml convert`, vous obtenez
+```yaml
+name: blog
+services:
+  hugo:
+    ports:
+      - target: 1314
+        published: 1313
+```
+Le port du contenaire et le port exposé sont explicitement nommés, c'est plus clair. L'ordre des paramètres est changé également, les réseaux explicités aussi, bref, on a une forme normalisée, parfaite pour bien suivre les modifications et faire des comparaisons.
+
+Avec un compose qui fait appel à un autre compose.yml, on obtient le contenu aplati (la référence au fichier source est remplacée par le contenu source, plus les instructions mergés).
+
+### Composition de compose
+
+Pour éviter les rédondances on peut utiliser un compose.yml source et y modifier quelques instructions de cette façon :
+
+```yaml
+services:
+  hugo:
+    extends:
+      file: compose_serve.yml
+      service: hugo
+    entrypoint: ["/bin/sh", "-c" , "rm -rf public/* && hugo"]
+```
+
+### Docker run : --mount vs --volume 
+
+Généralement on trouve dans les docs et autres ressources des commandes sous leur formes courtes.
+
+```shell
+docker run --rm -it -v $(pwd)/content:/tmp/yep php:8.2-cli /bin/bash
+```
+
+On peut utiliser la forme longue pour faire exactement la même chose.  
+A un détail près, avec la forme longue, si le dossier `content` n'existe pas sur l'hote, on a une erreur alors qu'avec la forme courte, on a aucune erreur et le contenaire est créé/lancé (et le dossier /tmp/yep est vide). Ça n'est en fait pas du tout un détail, c'est essentiel de lever des erreurs le plus tôt possible quand on rate quelque chose. On preferera donc la forme longue, plus secure :
+
+```shell
+docker run --rm -it --mount src=$(pwd)/content,target=/tmp/yep,type=bind php:8.2-cli /bin/bash
+```
+
+## Pour continuer
+
+Il reste unCreuser les secrets.
