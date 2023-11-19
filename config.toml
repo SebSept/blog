@@ -18,9 +18,10 @@ defaultContentLanguage = "fr" # For HTML page, now support: en, zh-hans, zh-hant
 [languages]
 [languages.fr]
 title = "SebSept Dev Blog"
+copyright = ""
+[languages.fr.params]
 subtitle = "Quelques notes de developeur php."
 keywords = ""
-copyright = ""
 #menuMore = "Suite"
 #readMore = "Suite..."
 #readOtherPosts = "Autres notes"
