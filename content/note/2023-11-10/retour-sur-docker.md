@@ -3,7 +3,8 @@ title: "Retour Sur Docker"
 date: 2023-11-10T14:09:22Z
 draft: false
 tags: [docker]
-slug: "retour-sur-docker" 
+slug: "retour-sur-docker"
+image: note/2023-11-10//ogimage.png
 ---
 
 Docker est incourtournable dans le developpement (web) aujourd'hui.  
