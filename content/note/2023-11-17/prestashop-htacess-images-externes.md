@@ -1,7 +1,7 @@
 ---
-title: "Prestashop Htaccess Images Externes"
+title: "Eviter la copie des images PrestaShop"
 date: 2023-11-17T14:02:30Z
-draft: true
+draft: false
 tags: [prestashop, apache]
 slug: "prestashop-htaccess-images-externes" 
 ---
