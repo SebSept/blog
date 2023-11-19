@@ -8,41 +8,35 @@ slug: "retour-sur-docker"
 
 Docker est incourtournable dans le developpement (web) aujourd'hui.  
 Je l'ai toujours utilisé rapidement, comme utilisateur final, rarement pour écrire moi-même des DockerFile ou des compose.yml.  
-J'ai décidé de me pencher un plus dedans et de l'utiliser plus souvent.
+J'ai décidé de m'y pencher un peu plus et de l'utiliser plus souvent.
 
 <!--more-->
 
 ## Contexte 
 
-Je n'ai jamais vraiment eu de besoin fort d'utiliser [Docker](https://www.docker.com/).  
-Je n'ai pas eu a tester mes modules sur différentes versions de PrestaShop, je me suis contenté de faire tourner des contenaires mysql, ftp et redis, simplement. j'ai eu nativement plusieurs versions de php sur ma machine (en cli et en apache) et ça me suffisait pour me simuler des différents environnements de production.
-
-En agence, j'ai rencontré un client avec un site developpé avec Docker et je l'ai mis en place sur un autre projet. Dans ces contextes de travail, je n'ai pas pris le temps de bien creuser les possibilités offertes par Docker.
+Je n'ai jamais eu de besoin fort d'utiliser [Docker](https://www.docker.com/).  
+Je n'ai pas eu a tester mes modules sur différentes versions de PrestaShop, je me suis contenté de faire tourner des contenaires mysql, ftp et redis, simplement.  j'ai rencontré un client avec un site sous Docker et je l'ai mis en place sur un autre projet. Mais dans ces contextes de travail, je n'ai pas pris le temps de bien creuser les possibilités offertes par Docker. Mettre les machines en fonctionnement était mon seul but.
 
 ## Problèmes
 
-Les problèmes que j'ai pu rencontrer avec Docker sont liés aux réseaux et aux taches de configuration des projets qui ne fonctionnait pas sous Windows (j'en reparlerai dans une autre note peut-être, ça n'est pas le sujet ici).
+Les problèmes que j'ai pu rencontrer avec Docker sont liés aux réseaux, aux lancements et interactions avec les containers sous Windows (pour mes collaborateurs).
 
-Quand je veux créer des images, des ensembles avec docker-compose, je tombe rapidement sur des blocages, je n'arrivais pas à faire ce que je veux. Je manque de pratique et de connaissances pour q'utiliser Docker soit vraiment efficace et agréable.  
-
-J'ai profité des vacances de la Toussain sous un temps exécrables pour me plonger dans la doc et l'expérimentation poussée de Docker.
-
-Aujourd'hui, je m'en sort bien mieux (j'ai passé la gestion du code de ce blog entirèment sous docker sans difficulté). 
+A ce jour, je manque de pratique. Utiliser Docker n'est pas vraiment agréable, je ne suis pas très efficace avec. Mais je vais y remedier et j'ai déjà commencé. J'ai profité des conditions tempétueuses des vacances de la Toussain pour me plonger dans la doc et l'expérimentation poussée de Docker.
 
 Voici ce que j'ai appris en lisant/testant. 
 
 ## Lecture de la doc et tests
 
-En préambule, il faut préciser que la documentation est très fournie, avec des exemples de début bien fait et une référence complète bien détaillée.  
-Par contre, avec toutes les fonctionnalités annexes (compose, swarm, scout, ...) on peut parfois se perdre un peu dans le menu. Pour les fonctionnalités avancées, il n'y a pas d'example très détaillé (je pense à la gestion des secrets) et il faudra expérimenter ou faire d'autre recherches pour bien comprendre.
+En préambule, il faut préciser que la documentation est très fournie, avec des _exemples de début_ bien fait et une référence complète bien détaillée (généralement).
+Par contre, avec toutes les fonctionnalités annexes (compose, swarm, scout, ...) on peut parfois se perdre un peu dans les contenus. Pour les fonctionnalités avancées, il n'y a pas d'example très détaillé (je pense à la gestion des secrets) et il faudra expérimenter ou faire d'autre recherches pour bien comprendre.
 
-@todo detailler guides, manual, ref
+On trouves des guides, des manuels et des références, cette séparation est bien pensée pour rentrer progressivement dans Docker.
 
 ### Docker desktop
 
-J'ai toujours géré les données de docker sans le GUI proposé (il n'existait pas tout simplement). En installant [Docker desktop](https://www.docker.com/products/docker-desktop/), il y a quelques mois, j'ai pu voir que mes données n'y sont pas listées. On aurait dit une histoire de contexte, j'ai pu voir dans la doc que c'est bien ça.  
-Sur mon vieux portable, j'ai tenté l'installation mais ça n'est pas possible, le processeur n'a pas fonctionnalité de virtualisation.  
-J'en ai profité pour tester [Portainer](https://www.portainer.io/) qui est une altenative au desktop qui fonctionne très bien, peut-être un peu moins ergonomique (à voir).  
+J'ai toujours géré les données de docker sans le GUI proposé (il n'existait pas tout simplement pas quand j'ai démarré Docker). En installant [Docker desktop](https://www.docker.com/products/docker-desktop/), il y a quelques mois, j'ai pu voir que mes données (images, containers, ...) n'y sont pas listées. On aurait dit une histoire de contexte, j'ai pu voir dans la doc que c'est bien ça.  J'en suis resté là sur ma machine fixe, je teste actuellement avec mon portable.
+Sur ce vieux portable, j'ai tenté l'installation mais ça n'est pas possible, le processeur n'a pas fonctionnalité de virtualisation.  
+J'en ai profité pour tester [Portainer](https://www.portainer.io/) qui est une altenative au desktop qui fonctionne très bien, peut-être un peu moins ergonomique, à voir. Fort possible que je l'utilise à l'avenir si j'ai beaucoup de données à gérer.  
 
 ### Build
 
@@ -51,18 +45,18 @@ Je ne reviens pas sur les fonctions de base (_FROM_, etc), [c'est bien document�
 
 ### Multistage build
 
-Dans un seul fichier _Dockerfile_ on peut construire plusieurs image et/ou contruire une image en plusieurs étapes.  
+Dans un seul fichier _Dockerfile_ on peut construire plusieurs images et/ou contruire une image en plusieurs étapes.  
 
 - Ça peut permettre de créer une image destinée à la prod et une destinée au dev.
-- construire une image finale propre quand on a du installer construire beaucoup de choses à partir de sources
-- Pourquoi pas organiser les choses en gérant 2 images dans un seul fichier
+- construire une image finale propre quand on a dû installer/construire beaucoup de choses à partir de sources
 
-J'ai expérimenté ça, ça fonctionne bien quand on a compris [comment sont gérées les instructions _ARG_](https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact).
+J'ai expérimenté, ça fonctionne bien quand on a compris [comment sont gérées les instructions _ARG_](https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact). Je saurais m'en servir le temps venu, ça fait partie des bonnes pratiques officielles.
 
-### Entry point vs CMD
+### ENTRYPOINT vs CMD
 
-Ce que je retiens de la doc de [Entry point](https://docs.docker.com/engine/reference/builder/#entrypoint) et [CMD](https://docs.docker.com/engine/reference/builder/#cmd) c'est qu'il faut préférer les formes json (`CMD ["/usr/bin/wc","--help"]`) pour les deux instructions, même si c'est moins lisible et plus pénible à écrire. Il faut le faire pour au moins deux raisons.  
-Pour la gestion des arguments, ça permet à CMD de proposer des arguments pour l'entry point, on peut spécifier des arguments à passer à la commande de l'entry point avec `docker run monimage -xx`, les arguments de CMD sont remplacés, ceux de l'entry point (`ENTRYPOINT ["executable", "param1", "param2"]`) sont conservés.  
+Dans les 2 cas, il s'agit de l'instruction exécutée au lancement du container.  
+Ce que je retiens de la doc de [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) et [CMD](https://docs.docker.com/engine/reference/builder/#cmd). Il faut préférer les formes json (`CMD ["/usr/bin/wc","--help"]`) pour les deux instructions. Même si c'est moins lisible et plus pénible à écrire, il faut le faire pour au moins deux raisons. L'articulation entre les instructions et les signaux.    
+Concrêtement, avec la forme json pour la gestion des arguments, ça permet à CMD de proposer des arguments pour l'entry point, on peut spécifier des arguments à passer à la commande de l'entry point avec `docker run monimage -xx`, les arguments de CMD sont remplacés, ceux de l'entry point (`ENTRYPOINT ["executable", "param1", "param2"]`) sont conservés.  
 Pour le passage des signaux, quand on envoit un signal de fin d'execution (CTRL+D), le signal est passé à la commande de l'entrypoint.
 
 ### On build
@@ -137,12 +131,13 @@ docker run --rm -it -v $(pwd)/content:/tmp/yep php:8.2-cli /bin/bash
 ```
 
 On peut utiliser la forme longue pour faire exactement la même chose.  
-A un détail près, avec la forme longue, si le dossier `content` n'existe pas sur l'hote, on a une erreur alors qu'avec la forme courte, on a aucune erreur et le contenaire est créé/lancé (et le dossier /tmp/yep est vide). Ça n'est en fait pas du tout un détail, c'est essentiel de lever des erreurs le plus tôt possible quand on rate quelque chose. On preferera donc la forme longue, plus secure :
+A un détail près, avec la forme longue, si le dossier `content` n'existe pas sur l'hôte, on a une erreur alors qu'avec la forme courte, le contenaire est créé/lancé sans erreur et le dossier /tmp/yep est vide.  
+Ça n'est pas du tout un détail, c'est essentiel de lever des erreurs le plus tôt possible quand on rate quelque chose (on peut généraliser cette philosophie à presque tout). On preferera donc la forme longue, plus secure et explicite :
 
 ```shell
 docker run --rm -it --mount src=$(pwd)/content,target=/tmp/yep,type=bind php:8.2-cli /bin/bash
 ```
 
-## Pour continuer
+### Pour continuer
 
-Il reste unCreuser les secrets.
+Maintenant que j'ai fais le tour de la doc qui m'interesse (j'ai ignoré docker swarm), mes prochaines étapes seront, la lecture des [best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/) et ce qui [docker hub](https://docs.docker.com/docker-hub/).
