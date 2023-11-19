@@ -3,7 +3,8 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
 tags: []
-slug: "{{ .Name | urlize }}" 
+slug: "{{ .Name | urlize }}"
+image: "{{ .File.Filename }}/ogimage.png
 ---
 
 Résumé
