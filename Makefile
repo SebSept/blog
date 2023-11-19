@@ -45,3 +45,6 @@ publish:
 
 stop_serve:
 	docker stop blog_hugo
+
+git_pull:
+	git pull github --rebase
