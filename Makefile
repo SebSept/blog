@@ -12,6 +12,7 @@ serve:
 	firefox http://localhost:1313/
 
 new_post:
+	docker ps | grep blog_hugo || docker compose -f compose_serve.yml up --detach
 	@read -p "Titre du nouveau post : " title;\
 	DIR="post/"$$(date +"%Y-%m-%d");\
 	SLUG=$$title;\
@@ -21,6 +22,7 @@ new_post:
 	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"
 
 new_note:
+	docker ps | grep blog_hugo || docker compose -f compose_serve.yml up --detach
 	@read -p "Titre de la nouvelle note : " title;\
 	DIR="note/"$$(date +"%Y-%m-%d");\
 	SLUG=$$title;\
