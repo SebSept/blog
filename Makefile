@@ -1,7 +1,8 @@
-.PHONY: new_note new_post git_push publish stop_serve
+.PHONY: serve new_note new_post git_push publish stop_serve
 
 help:
 	# Commandes
+	# make git_pull
 	# make serve : afficher le blog : lance le serveur local et ouvre firefox
 	# make new_post : création d'un nouveau post (lancer docker avant : make serve)
 	# make git_push : versionner, pousser sur github, suivi de publish normalement
@@ -19,7 +20,8 @@ new_post:
 	SLUG=$$(echo "$$title" | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z); \
 	FULL_PATH="$${DIR}/$${SLUG}.md";\
 	docker exec -it blog_hugo hugo new "$$FULL_PATH"; \
-	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"
+	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"; \
+	vim "/content/$${FULL_PATH}";
 
 new_note:
 	docker ps | grep blog_hugo || docker compose -f compose_serve.yml up --detach
@@ -29,7 +31,8 @@ new_note:
 	SLUG=$$(echo "$$title" | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z); \
 	FULL_PATH="$${DIR}/$${SLUG}.md";\
 	docker exec -it blog_hugo hugo new "$$FULL_PATH"; \
-	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"
+	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"; \
+	vim "/content/$${FULL_PATH}";
 
 git_push:
 	git add .
