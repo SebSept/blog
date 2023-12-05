@@ -3,9 +3,11 @@
 help:
 	# Commandes
 	# make git_pull
+	# make new_post : création d'un nouveau post
+	# make new_note : création d'une nouvelle note
+	# make git_push: pousser sur github
+	# make git_add_and_push: versionner, pousser sur github, suivi de publish normalement
 	# make serve : afficher le blog : lance le serveur local et ouvre firefox
-	# make new_post : création d'un nouveau post (lancer docker avant : make serve)
-	# make git_push : versionner, pousser sur github, suivi de publish normalement
 	# make publish : rsync sur blog.seb7.fr
 
 serve:
@@ -34,11 +36,14 @@ new_note:
 	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"; \
 	vim "/content/$${FULL_PATH}";
 
-git_push:
+git_add_and_push:
 	git add .
 	git status
 	@read -p "message du commit : " message;\
 	git commit -m "$$message"
+	git push github
+
+git_push:
 	git push github
 
 publish:
