@@ -4,7 +4,7 @@ date: 2023-12-05T14:54:50Z
 draft: true
 tags: ["php","xdebug","docker"]
 slug: "configuration-facile-de-xdebug-en-cli"
-image: "/home/app/content/note/2023-12-05/configuration-facile-de-xdebug-en-cli.md/ogimage.png
+image: "/home/app/content/note/2023-12-05/configuration-facile-de-xdebug-en-cli.md/ogimage.png"
 ---
 
 J'ai pris un peu de temps pour creuser l'utilisation de xdebug avec les commandes en cli et phpstorm.

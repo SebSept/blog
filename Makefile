@@ -23,7 +23,8 @@ new_post:
 	FULL_PATH="$${DIR}/$${SLUG}.md";\
 	docker exec -it blog_hugo hugo new "$$FULL_PATH"; \
 	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"; \
-	vim "/content/$${FULL_PATH}";
+	vim "content/$${FULL_PATH}";
+#	vim (fd $${SLUG})
 
 new_note:
 	docker ps | grep blog_hugo || docker compose -f compose_serve.yml up --detach
@@ -34,7 +35,7 @@ new_note:
 	FULL_PATH="$${DIR}/$${SLUG}.md";\
 	docker exec -it blog_hugo hugo new "$$FULL_PATH"; \
 	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"; \
-	vim "/content/$${FULL_PATH}";
+	vim "content/$${FULL_PATH}";
 
 git_add_and_push:
 	git add .
