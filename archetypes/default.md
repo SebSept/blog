@@ -4,7 +4,7 @@ date: {{ .Date }}
 draft: true
 tags: []
 slug: "{{ .Name | urlize }}"
-image: "{{ .File.Filename }}/ogimage.png
+image: "{{ .File.Filename }}/ogimage.png"
 ---
 
 Résumé
