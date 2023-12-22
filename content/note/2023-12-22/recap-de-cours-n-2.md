@@ -2,7 +2,7 @@
 title: "Recap De Cours n°2"
 date: 2023-12-22T15:54:54Z
 draft: false
-tags: [formation, docker]
+tags: [formation, docker, sql]
 slug: "recap-de-cours-n-2"
 image: "/home/app/content/note/2023-12-22/recap-de-cours-n-2.md/ogimage.png"
 ---
