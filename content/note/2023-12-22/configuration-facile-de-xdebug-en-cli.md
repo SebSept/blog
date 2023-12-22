@@ -1,6 +1,6 @@
 ---
 title: "Configuration Facile De Xdebug en Cli "
-date: 2023-22-05T14:54:50Z
+date: 2023-12-21T14:54:50Z
 draft: false
 tags: ["php","xdebug","docker", "phpstorm"]
 slug: "configuration-facile-de-xdebug-en-cli"
