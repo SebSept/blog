@@ -36,6 +36,9 @@ new_note:
 	docker exec -it blog_hugo hugo new "$$FULL_PATH"; \
 	docker exec -it blog_hugo chown 1000:1000 -R "/home/app/content"; \
 	vim "content/$${FULL_PATH}";
+	# build & serve
+	docker compose -f compose_build.yml up
+	docker compose -f compose_serve.yml up --detach
 
 git_add_and_push:
 	git add .
