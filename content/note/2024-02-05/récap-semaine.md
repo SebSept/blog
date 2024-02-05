@@ -1,7 +1,7 @@
 ---
 title: "Récap Semaine"
 date: 2024-02-05T08:55:51Z
-draft: false
+draft: true
 tags: ["java", "symfony", "architecture"]
 slug: "recap-semaine-5"
 ---
