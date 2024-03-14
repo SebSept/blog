@@ -1,4 +1,4 @@
-.PHONY: serve new_note new_post git_push publish stop_serve
+.PHONY: serve new_note new_post git_push publish stop_serve list_notes
 
 help:
 	# Commandes
@@ -9,6 +9,7 @@ help:
 	# make git_add_and_push: versionner, pousser sur github, suivi de publish normalement
 	# make serve : afficher le blog : lance le serveur local et ouvre firefox
 	# make publish : rsync sur blog.seb7.fr
+	# make list_notes : liste les notes par date de récence (url)
 
 serve:
 	docker compose -f compose_serve.yml up --detach
@@ -60,3 +61,6 @@ stop_serve:
 
 git_pull:
 	git pull github --rebase
+
+list_notes:
+	fd --type file --search-path content/note/ --extension md  |  sort --reverse
