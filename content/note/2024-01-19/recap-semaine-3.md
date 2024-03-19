@@ -1,5 +1,5 @@
 ---
-title: "Recap Semaine n°5"
+title: "Recap de cours n°5"
 date: 2024-01-19T14:21:49Z
 draft: false
 tags: []

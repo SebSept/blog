@@ -1,5 +1,5 @@
 ---
-title: "Recap De Cours n°2"
+title: "Recap de cours n°2"
 date: 2023-12-22T15:54:54Z
 draft: false
 tags: [formation, docker, sql]

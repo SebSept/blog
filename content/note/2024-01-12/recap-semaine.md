@@ -1,5 +1,5 @@
 ---
-title: "Recap Semaine n°4"
+title: "Recap de cours n°4"
 date: 2024-01-12T14:46:56Z
 draft: false
 tags: ["figma", "design", "projet"]
