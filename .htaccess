@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Redirection de /note/* vers /posts/*
+RewriteRule ^note/\d{4}-\d{2}-\d{2}/(.*)$ /posts/$1 [R=301,L]
+
+# Redirections des contenus sans prefixe, 2 "articles"
+RewriteRule ^sqlmap-tester-injections-sql-prestashop/$ /posts/sqlmap-tester-injections-sql-prestashop/ [R=301,L]
+RewriteRule ^note/2023-11-17/prestashop-htaccess-images-externes/$ /posts/2023-11-17/prestashop-htaccess-images-externes/ [R=301,L]
