@@ -1,0 +1,13 @@
+name: astro
+services:
+  astro-node:
+    stdin_open: true
+    tty: true
+    volumes:
+      - /home/seb/dev/javascript/astro:/home/node
+    image: node:lts-slim
+    command: "/bin/bash"
+    working_dir: /home/node
+
+networks:
+  astro-node:
