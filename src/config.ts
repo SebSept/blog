@@ -13,7 +13,7 @@ export const SITE: Site = {
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: false,
   editPost: {
-    url: "https://github.com/SebSept/blog/main/src/content/blog",
+    url: "https://github.com/SebSept/blog/blob/main/src/content/blog",
     text: "Suggestion",
     appendFilePath: true,
   },
