@@ -31,3 +31,4 @@ pnpm-debug.log*
 !.yarn/versions
 .pnp.*
 .idea/
+/.vscode/settings.json
