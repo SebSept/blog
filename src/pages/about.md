@@ -27,5 +27,5 @@ contact@seb7.fr
 ## Copyrights
 
 - Contenu des articles par Sébastien Monterisi (sauf mention contraire) sous [licence "CC BY-NC-SA 4.0"](http://creativecommons.org/licenses/by-nc-sa/4.0/)
-- Contenu généré avec [Hugo](https://astro.build/)
+- Contenu généré avec [Astro](https://astro.build/)
 - Thème graphique réalisé à partir de [AstroPaper](https://astro-paper.pages.dev/)
