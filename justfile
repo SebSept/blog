@@ -10,17 +10,24 @@ shell:
     {{docker}} /bin/bash
 
 dev: start
-    {{yarn}}  dev
+    {{yarn}} dev
 
 preview:
-    {{yarn}}  preview
+    {{yarn}} preview
 
 build:
-    {{yarn}}  build
+    {{yarn}} build
 
 lint:
-    {{yarn}}  format
-    {{yarn}}  eslint
+    {{yarn}} format
+    {{yarn}} eslint
+
+push:
+	git push origin
+
+publish:
+    rsync --recursive --compress --delete dist/ dev.seb7.fr:/var/www/seb7.fr/blog
+    firefox https://blog.seb7.fr
 
 fixrights:
     sudo chown -R seb:seb .

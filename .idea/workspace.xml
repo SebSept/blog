@@ -5,39 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="477543aa-938c-4a78-9070-4417db707d00" name="Changes" comment="astro">
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2022-03-09-hello.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2022-03-18-test-de-hugo-a-nouveau.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2022-03-24-python-c-est-easy.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2022-04-12/note-indicateur-debug-mode-prestashop.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2022-04-12/prompt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2022-04-12/prompt.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2022-04-12/prompt2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-09-25/Hello Fish, Bye bye Zsh.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-09-25/fish_autocompletion_commande.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-09-25/fish_autocompletion_fzf_git_status.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-09-25/fish_autocompletion_fzf_variables_env.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-09-25/fish_autocompletion_option.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-11-09/j-entame-une-formation-symfony.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-11-10/retour-sur-docker.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-11-17/prestashop-htacess-images-externes.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-12-06/copilot.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-12-06/github-copilot-gratos.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-12-22/configuration-facile-de-xdebug-en-cli.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-12-22/recap-de-cours-n-1.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2023-12-22/recap-de-cours-n-2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-01-05/récap-de-la-semaine.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-01-12/recap-semaine.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-01-19/recap-semaine-3.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-01-26/recap-semaine-4.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-01-31/quelques-vidéos.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-02-05/erreurs-en-java.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-02-05/récap-semaine.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-02-06/design-patterns.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-03-14/petit-break.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-03-18/initiation-à-la-gestion-de-projet.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-04-05/apiplatform-et-symfony.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/content/blog/2024-11-05/titre-pro.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/justfile" beforeDir="false" afterPath="$PROJECT_DIR$/justfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +30,7 @@
         <entry key="$PROJECT_DIR$/.." value="playground1" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/config.ts" root0="FORCE_HIGHLIGHTING" />
@@ -72,24 +44,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.compose.yml.astro-node: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;astro&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/seb/dev/javascript/astro/src/content/blog&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;docker://node:lts-slim/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/seb/dev/javascript/astro/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.compose.yml.astro-node: Compose Deployment.executor": "Run",
+    "Docker.compose.yml: Compose Deployment.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/seb/dev/blog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "docker://node:lts-slim/node",
+    "nodejs_package_manager_path": "yarn",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "/home/seb/dev/javascript/astro/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -165,6 +137,7 @@
       <workItem from="1731427406091" duration="4576000" />
       <workItem from="1731515515710" duration="12882000" />
       <workItem from="1731580044084" duration="1103000" />
+      <workItem from="1731582075298" duration="1480000" />
     </task>
     <task id="LOCAL-00001" summary="javelot">
       <option name="closed" value="true" />
