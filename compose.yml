@@ -4,7 +4,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - /home/seb/dev/javascript/astro:/home/node
+      - ./:/home/node
     image: node:lts-slim
     command: "/bin/bash"
     working_dir: /home/node
