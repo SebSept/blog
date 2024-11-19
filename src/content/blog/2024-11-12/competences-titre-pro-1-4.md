@@ -12,9 +12,9 @@ Dans ce post, je vous présente mon dossier de projet professionnel.
 
 ## Contexte
 
-Comme je l'évoquais dans le billet précédent, j'ai obtenu mon Titre Professionnel de Développeur Concepteur d'application (Bachelor, niveau 6, bac +3). À l'occasion de ce titre, j'ai présenté mon dossier de projet devant le jury. C'est un bel élément pour faire une démonstration de mes compétences, j'en profite donc pour vous faire aussi cette démonstration. Le document en question est disponible ici : [dossier de projet professionnel]().
+Comme je l'évoquais dans le billet précédent, j'ai obtenu mon Titre Professionnel de Développeur Concepteur d'application (Bachelor, niveau 6, bac +3). À l'occasion de ce titre, j'ai présenté mon dossier de projet devant le jury. C'est un bel élément pour faire une démonstration de mes compétences, j'en profite donc pour vous faire aussi cette démonstration. Le document en question est disponible ici : [dossier de projet professionnel](http://dev.seb7.fr/dossier_de_projet.pdf).
 
-Pour réaliser ce projet, j'ai traité l'ensemble des compétences du référentiel de certification [référentiel officiel]().  
+Pour réaliser ce projet, j'ai traité l'ensemble des compétences du référentiel de certification [référentiel officiel](https://www.francecompetences.fr/recherche/rncp/6255/).  
 Pour ne pas vous livrer un pavé à lire, je vais découper cette présentation en plusieurs posts.  
 Ce billet couvre le bloc _Développer des composants d'interface_, décliné en trois parties.
 
