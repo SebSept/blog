@@ -1,6 +1,4 @@
 docker := "docker compose exec -w /home/node/ astro-node "
-sh := "docker compose exec -w /home/node/ astro-node /bin/sh "
-npx := "docker compose exec -w /home/node/ astro-node npx "
 yarn := docker + " yarn"
 
 # docker up
