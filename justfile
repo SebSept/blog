@@ -29,8 +29,8 @@ lint:
 push:
 	git push origin
 
-# mise en ligne
-publish:
+# build + mise en ligne
+publish: build
     rsync --recursive --compress --delete dist/ dev.seb7.fr:/var/www/seb7.fr/blog
     firefox https://blog.seb7.fr
 
