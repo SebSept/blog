@@ -17,7 +17,6 @@ preview:
 
 build:
     {{yarn}} build
-    sudo cp .htaccess ./dist
 
 lint:
     {{yarn}} format
