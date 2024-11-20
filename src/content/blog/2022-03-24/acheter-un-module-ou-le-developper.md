@@ -3,7 +3,7 @@ title: "Acheter Un Module Ou Le Développer ?"
 pubDatetime: 2022-03-24
 draft: true
 tags: ["prestashop", "module", "sécurité"]
-slug: "acheter-un-module-ou-le-développer" 
+slug: "acheter-un-module-ou-le-développer"
 description: "Acheter un module ou le développer ?"
 ---
 
@@ -16,7 +16,7 @@ Acheter une module devrait être plus productif que de le developper.
 
 La marketplace gérée par la société PrestaShop, ["Official Addons Marketplace"](https://addons.prestashop.com/fr/) on trouve de nombreux modules.  
 On pourrait s'attendre à ce que les modules en vente soit triés, testés, validés. C'est le cas, mais malgré tout, la qualité d'un module acheté reste aléatoire.  
-Et il est récurrent de se retrouver avec des modules qui fonctionnent mal et qui demandent l'intervention du vendeur/développeur.  
+Et il est récurrent de se retrouver avec des modules qui fonctionnent mal et qui demandent l'intervention du vendeur/développeur.
 
 ## Exposer ses données
 
@@ -24,7 +24,6 @@ Et il est récurrent de se retrouver avec des modules qui fonctionnent mal et qu
 - exposer ses informations de business
 - exposer les données de ses clients
 - s'exposer a un backdoor
-
 
 ## S'attendre à du travail après l'achat
 
@@ -37,6 +36,4 @@ Et il est récurrent de se retrouver avec des modules qui fonctionnent mal et qu
 ex de travail avec les différents points.  
 quand ça touche au front
 
-
 ## Comment évaluer la qualité d'un module à priori ?
-

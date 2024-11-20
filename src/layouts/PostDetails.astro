@@ -32,8 +32,8 @@ const {
 const { Content } = await post.render();
 
 // filtrage des tags, on ne garde que ceux qui sont listés
-const uniqueTags = getUniqueTags(posts).map((t) => t.tag);
-const filteredTags = tags.filter((t) => uniqueTags.includes(t));
+const uniqueTags = getUniqueTags(posts).map(t => t.tag);
+const filteredTags = tags.filter(t => uniqueTags.includes(t));
 
 const ogImageUrl = typeof ogImage === "string" ? ogImage : ogImage?.src;
 const ogUrl = new URL(
@@ -145,7 +145,6 @@ const nextPost =
               </>
             </svg>
             <div>
-              <!--<span>Précédent</span>-->
               <div class="text-sm text-skin-accent/85">{prevPost.title}</div>
             </div>
           </a>
@@ -158,7 +157,6 @@ const nextPost =
             class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
           >
             <div>
-              <!--<span>Suivant</span>-->
               <div class="text-sm text-skin-accent/85">{nextPost.title}</div>
             </div>
             <svg

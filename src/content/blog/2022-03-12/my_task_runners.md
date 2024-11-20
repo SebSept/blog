@@ -1,7 +1,7 @@
 ---
 title: "Task runners"
 pubDatetime: 2022-03-12
-draft: true 
+draft: true
 slug: task-runners
 tags: [python, php, outils]
 description: "Task runners"
@@ -36,12 +36,11 @@ Se rappeller, rechercher à un coût. Hors, en bon développeur, on se doit de r
 
 En se basant sur l'historique du shell ou sa mémoire, on se donne la possibilité de lancer une tache avec de mauvais paramètres ou tout simplement d'oublier qu'une est ou doit être lancée.
 
-Pour un professionnel, ça n'est pas vraiment acceptable. 
+Pour un professionnel, ça n'est pas vraiment acceptable.
 
 ## (Les avantages et) les limites
 
 pas besoin de tout y mettre.
-
 
 ### Les solutions alternatives
 
@@ -50,8 +49,4 @@ pas besoin de tout y mettre.
 - document / note
 - alias sur les outils
 
-
-Probablement que vous configurerez votre IDE 
-
-
-
+Probablement que vous configurerez votre IDE

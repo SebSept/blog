@@ -1,7 +1,7 @@
 ---
 title: "Sqlmap : Tester Les Injections Sql"
 pubDatetime: 2022-03-14
-draft: false 
+draft: false
 tags: [securité, sql, prestashop]
 slug: sqlmap-tester-injections-sql-prestashop
 description: "Éprouvez la sécurité des modules PrestaShop avec Sqlmap."
@@ -18,7 +18,7 @@ Sqlmap est un outil python en ligne de commande qui permet de tester la vulnéra
 Dans le cœur de PrestaShop et dans les modules développés par l'entreprise PrestaShop, il est très improbable d'en trouver. Le code est public, il y a de nombreux développeurs et un [bug bounty](https://yeswehack.com/programs/prestashop) est en place.
 
 Dans les modules tiers, par contre, c'est tout à fait possible.  
-C'est d'autant plus possible que certaines plateformes de vente ne sont pas très regardantes sur la qualité de ce qu'elles vendent. Notamment quand il s'agit de thème et que ces thèmes embarquent des modules.  Un intégrateur, graphiste, designer (comme vous voulez), peut penser savoir coder, alors qu'il est tranquillement posé au sommet de la montagne de la stupidité (en référence à [l'effet Dunning-Kruger](https://fr.wikipedia.org/wiki/Effet_Dunning-Kruger)).
+C'est d'autant plus possible que certaines plateformes de vente ne sont pas très regardantes sur la qualité de ce qu'elles vendent. Notamment quand il s'agit de thème et que ces thèmes embarquent des modules. Un intégrateur, graphiste, designer (comme vous voulez), peut penser savoir coder, alors qu'il est tranquillement posé au sommet de la montagne de la stupidité (en référence à [l'effet Dunning-Kruger](https://fr.wikipedia.org/wiki/Effet_Dunning-Kruger)).
 
 Pour ma part, j'ai plusieurs fois découvert des vulnérabilités critiques dans les modules de mes clients et c'était souvent dans des modules embarqués par des thèmes.
 
@@ -31,15 +31,15 @@ Avec ces données, sans imagination, il est déjà possible de se livrer a une b
 
 Il doit également être possible (ça je ne l'ai pas testé) d'injecter des données dans votre base de données. Des redirections, changer des clés d'api de paiement, des choses très sympathiques...
 
-Bref, ça ne doit pas être pris à la légère.  Vous devriez toujours demander à votre développeur de vérifier le code des modules dont on peut douter de la qualité.  
+Bref, ça ne doit pas être pris à la légère. Vous devriez toujours demander à votre développeur de vérifier le code des modules dont on peut douter de la qualité.  
 Au besoin, je suis joignable.
 
 ## Sqlmap pour tester les injections
 
-Sans outil dédié, il faut lire le code, c'est non seulement pénible, mais sujet à erreur.  Faire appel à outil spécialisé comme sqlmap n'est pas un luxe.  
+Sans outil dédié, il faut lire le code, c'est non seulement pénible, mais sujet à erreur. Faire appel à outil spécialisé comme sqlmap n'est pas un luxe.  
 [Sqlmap](https://sqlmap.org/) est disponible en open source, la documentation est bien faite et complète, en la lisant vous trouverez votre bonheur.
 
-À partir de maintenant, ça va devenir un peu plus technique.  
+À partir de maintenant, ça va devenir un peu plus technique.
 
 L'installation est très simple, python et git sont prérequis.
 
@@ -78,8 +78,8 @@ Voici maintenant la commande qui exploite la vulnérabilité.
   # --flush-session
 ```
 
-- `-u`  : L'url problématique, il vous faudra peut-être utiliser la console de votre navigateur pour la trouver si c'est un appel ajax.  
-C'est dans ce type de fichier, destiné aux requêtes ajax que le développeur amateur aura commit son méfait, le plus probablement. 
+- `-u` : L'url problématique, il vous faudra peut-être utiliser la console de votre navigateur pour la trouver si c'est un appel ajax.  
+  C'est dans ce type de fichier, destiné aux requêtes ajax que le développeur amateur aura commit son méfait, le plus probablement.
 - `--data` : ce sont les paramètres passés en POST (en methode GET, pas besoin de spécifier ce paramètre.)
 - `--dbms` : en spécifiant le type de base de données on évite certains tests inutiles
 - `--batch` : avec ce paramètre, vous évitez les questions de sqlmap. Dans un premier temps, ne mettez pas ce paramètre, ça vous renseignera un peu sur ce que fait sqlmap et les possibilités offertes
@@ -89,7 +89,7 @@ C'est dans ce type de fichier, destiné aux requêtes ajax que le développeur a
 - `-p` : permet de spécifier le paramètre sur lequel va jouer sqlmap, si vous ne spécifier pas ce paramètre, sqlmap va tenter sur tous les paramètres passés dans l'url ou l'option --data
 - `--flush-session` : par défaut sqlmap stock les informations qu'il extrait pour les réutiliser dans les appels suivants. Si vous changez le code php, vous voudrez l'utiliser pour réinitialiser _l'attaque_.
 
-Sqlmap va bombarder votre script pour chercher les failles. Vous ferez donc ça sur une machine de test et pas sur un site vraiment hébergé en ligne.  
+Sqlmap va bombarder votre script pour chercher les failles. Vous ferez donc ça sur une machine de test et pas sur un site vraiment hébergé en ligne.
 
 ## Pour conclure
 
@@ -103,7 +103,6 @@ Si vous avez besoin que je mène ce genre de prestation pour vous, c'est possibl
 ### Pour aller un peu plus loin
 
 Ça n'est pas très méchant à faire, mais ça serait sympa de coder un petit script qui va lire les logs du serveur, extraire les urls potentiellement à risque et lancer des commandes sqlmap adéquates...  
-Si vous connaissez un tel outil, n'hésitez pas à m'en faire par, sur [twitter](https://twitter.com/seb_sept) par exemple.  
+Si vous connaissez un tel outil, n'hésitez pas à m'en faire par, sur [twitter](https://twitter.com/seb_sept) par exemple.
 
 > PS : n'oubliez pas de mettre une capuche avant le lancer sqlmap.
-

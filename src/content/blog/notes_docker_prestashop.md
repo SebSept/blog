@@ -1,7 +1,7 @@
 ---
 title: "Notes sur Prestashop avec Docker"
 pubDatetime: 2021-11-05
-draft: true 
+draft: true
 description: "Notes sur Prestashop avec Docker"
 tags: ["prestashop", "docker"]
 slug: "notes-sur-prestashop-avec-docker"
@@ -9,7 +9,7 @@ slug: "notes-sur-prestashop-avec-docker"
 
 ## Contexte
 
-J'ai découvert [Docker](https://fr.wikipedia.org/wiki/Docker_(logiciel)) il y a quelques années.
+J'ai découvert [Docker](<https://fr.wikipedia.org/wiki/Docker_(logiciel)>) il y a quelques années.
 
 ### Point forts
 
@@ -38,6 +38,3 @@ Je pourrai installer cette version localement et travailler dans cet environneme
 Je vous donne donc ici quelques informations qui ne relèvent pas d'une expérience consolidée mais bien d'une expérience initiale de PrestaShop avec Docker, étant moi-même peut expérimenté avec Docker.
 
 ## PrestaShop
-
-
-
