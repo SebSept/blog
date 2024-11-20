@@ -17,6 +17,7 @@ export type Site = {
     text?: string;
     appendFilePath?: boolean;
   };
+  minTagOccurrences: number;
 };
 
 export type SocialObjects = {
