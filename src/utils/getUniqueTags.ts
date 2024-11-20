@@ -1,6 +1,7 @@
 import {slugifyStr} from "./slugify";
 import type {CollectionEntry} from "astro:content";
 import postFilter from "./postFilter";
+import { SITE } from "@config";
 
 interface Tag {
   tag: string;
@@ -13,13 +14,12 @@ const getUniqueTags = (posts: CollectionEntry<"blog">[]) => {
     .filter(postFilter)
     .flatMap(post => post.data.tags)
     .map(tag => ({ tag: slugifyStr(tag), tagName: tag, count: 0 }))
-    // ajout du compte du nombre d'occurences
-    .map((tag, index, self) => {
-      const count = self.filter(t => tag.tag === t.tag).length;
-      return { ...tag, count: count };
+    // ajout du compte du nombre d'occurrences
+    .map((tag, _, self) => {
+        return { ...tag, count: self.filter(t => tag.tag === t.tag).length };
     })
-    // filtrage par nombre d'occurences
-    .filter(tag => tag.count > 1)
+    // filtrage par nombre d'occurrences
+    .filter(tag => tag.count >= SITE.minTagOccurrences)
     .filter(
       (value, index, self) =>
         self.findIndex(tag => tag.tag === value.tag) === index

@@ -17,6 +17,7 @@ export const SITE: Site = {
     text: "Suggestion",
     appendFilePath: true,
   },
+  minTagOccurrences: 2
 };
 
 export const LOCALE = {
