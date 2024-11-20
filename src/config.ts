@@ -2,9 +2,9 @@ import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://blog.seb7.fr/", // replace this with your deployed domain
-  author: "Seb",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+  author: "Sebastien Monterisi",
+  profile: "https://github.com/sebsept/",
+  desc: "Quelques notes, impressions, avis, réalisations, apprentissages, d'un développeur web.",
   title: "DevBlog - Sébastien Monterisi",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: false,
