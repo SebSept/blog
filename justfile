@@ -5,17 +5,17 @@ yarn := docker + " yarn"
 start:
 	docker compose up --detach --remove-orphans
 
-shell:
+shell: start
     {{docker}} /bin/bash
 
 # serveur local de dev
 dev: start
     {{yarn}} dev
 
-preview:
+preview: start
     {{yarn}} preview
 
-build:
+build: start
     {{yarn}} build
 
 lint:
@@ -25,6 +25,13 @@ lint:
 # git push
 push:
 	git push origin
+
+#git pull
+update:
+    git pull --rebase
+    # appel du script start
+    just start
+    {{yarn}} install
 
 # build + mise en ligne
 publish: build
