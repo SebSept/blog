@@ -17,7 +17,6 @@ const {
   download = false,
 } = Astro.props;
 
-const downloadHtml = download ? "download" : "";
 ---
 
 {
@@ -35,7 +34,7 @@ const downloadHtml = download ? "download" : "";
     class:list={["group inline-block hover:text-skin-accent", className]}
     aria-label={ariaLabel}
     title={title}
-    {downloadHtml}
+    {download}
   >
       <slot />
     </a>
