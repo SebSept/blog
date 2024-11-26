@@ -28,7 +28,7 @@ push:
 
 #git pull
 update:
-    git pull --rebase
+    git pull --merge
     # appel du script start
     just start
     {{yarn}} install
