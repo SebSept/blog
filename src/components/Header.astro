@@ -55,7 +55,7 @@ const { activeNav } = Astro.props;
           </svg>
         </button>
         <ul id="menu-items" class="display-none sm:flex">
-          <li>
+           <li>
             <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
               Posts
             </a>
@@ -108,6 +108,20 @@ const { activeNav } = Astro.props;
               </li>
             )
           }
+          <!-- téléchargement cv -->
+          <li>
+            <LinkButton
+              href="http://dev.seb7.fr/cv_sebastien_monterisi.pdf"
+              className={`focus-outline flex justify-center p-3 sm:p-1`}
+              ariaLabel="Télécharger mon CV pdf"
+              title="Télécharger mon CV"
+              download={true}
+            >
+              CV
+            </LinkButton>
+          </li>
+
+
           <li>
             <LinkButton
               href="/search/"
