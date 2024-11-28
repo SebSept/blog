@@ -6,9 +6,9 @@ import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
-import Socials from "@components/Socials.astro";
+// import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
-import { SITE, SOCIALS } from "@config";
+import { SITE } from "@config";
 // import { DataEntry } from "astro/dist/content/data-store";
 
 const posts = await getCollection("blog");
@@ -17,7 +17,7 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
-const socialCount = SOCIALS.filter(social => social.active).length;
+// const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
@@ -49,16 +49,16 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         /> de mon point de vue de développeur et concepteur web. <br />
       </p>
 
-      <p>
-        <LinkButton href="/posts" className="text-skin-accent ">
-          <svg xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
-          Tous les posts
-        </LinkButton>
-      </p>
+      <!--<p>-->
+      <!--  <LinkButton href="/posts" className="text-skin-accent ">-->
+      <!--    <svg xmlns="http://www.w3.org/2000/svg">-->
+      <!--      <path-->
+      <!--        d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"-->
+      <!--      ></path>-->
+      <!--    </svg>-->
+      <!--    Tous les posts-->
+      <!--  </LinkButton>-->
+      <!--</p>-->
       <!--<p>-->
       <!--  Read the blog posts or check-->
       <!--  <LinkButton-->
@@ -68,16 +68,16 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <!--    README-->
       <!--  </LinkButton> for more info.-->
       <!--</p>-->
-      {
-        // only display if at least one social link is enabled
+      <!--{-->
+      <!--  // only display if at least one social link is enabled-->
 
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Ailleurs :</div>
-            <Socials />
-          </div>
-        )
-      }
+      <!--  socialCount > 0 && (-->
+      <!--    <div class="social-wrapper">-->
+      <!--      <div class="social-links">Ailleurs :</div>-->
+      <!--      <Socials />-->
+      <!--    </div>-->
+      <!--  )-->
+      <!--}-->
     </section>
 
     <Hr />
