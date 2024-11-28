@@ -16,7 +16,6 @@ const {
   disabled = false,
   download = false,
 } = Astro.props;
-
 ---
 
 {
@@ -29,13 +28,13 @@ const {
       <slot />
     </span>
   ) : (
-  <a
-    {href}
-    class:list={["group inline-block hover:text-skin-accent", className]}
-    aria-label={ariaLabel}
-    title={title}
-    {download}
-  >
+    <a
+      {href}
+      class:list={["group inline-block hover:text-skin-accent", className]}
+      aria-label={ariaLabel}
+      title={title}
+      {download}
+    >
       <slot />
     </a>
   )
