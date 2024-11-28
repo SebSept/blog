@@ -14,13 +14,15 @@ export interface Props {
   page: Page<CollectionEntry<"blog">>;
   tag: string;
   tagName: string;
-  tagDescription: CollectionEntry<'tag_description'>;
+  tagDescription?: CollectionEntry<"tag_description">;
 }
 
 const { page, tag, tagName, tagDescription } = Astro.props;
 const count = page.data.length;
 const word_note = count > 1 ? "notes" : "note";
-const {Content:TagDescription} = tagDescription ? await tagDescription.render() : {};
+const { Content: TagDescription } = tagDescription
+  ? await tagDescription.render()
+  : {};
 ---
 
 <Layout title={`Tag: ${tagName} | ${SITE.title}`}>
@@ -33,7 +35,13 @@ const {Content:TagDescription} = tagDescription ? await tagDescription.render() 
     <h1 slot="title" transition:name={tag}>
       {`${count} ${word_note} avec le tag: ${tag}`}
     </h1>
-    {TagDescription && <Callout><TagDescription /></Callout>}
+    {
+      TagDescription && (
+        <Callout>
+          <TagDescription />
+        </Callout>
+      )
+    }
     <ul>
       {
         page.data.map(({ data, slug }) => (

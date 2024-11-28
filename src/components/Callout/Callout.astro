@@ -1,18 +1,27 @@
 ---
-import InfoSvg from './exclamation.svg?raw';
+import InfoSvg from "./exclamation.svg?raw";
 export interface Props {
-    icon: 'info'; // | 'warning' | 'error' | 'success';
-    title?: string;
+  icon?: "info"; // | 'warning' | 'error' | 'success';
+  title?: string;
 }
 
 const { icon, title } = Astro.props;
 
 const icons = {
-    'info': InfoSvg,
-}
+  info: InfoSvg,
+};
 ---
-<aside class="text-white border-2 border-skin-accent rounded-md p-4 bg-skin-accent/10">
-    {icons[icon] && <Fragment set:html={icons[icon]} />}
-    {title && <strong>{title}</strong> <hr class="border-0 my-1" />}
-    <slot />
+
+<aside
+  class="text-white border-2 border-skin-accent rounded-md p-4 bg-skin-accent/10"
+>
+  {icon && icons[icon] && <Fragment set:html={icons[icon]} />}
+  {
+    title && (
+      <Fragment>
+        <strong>{title}</strong> <hr class="border-0 my-1" />
+      </Fragment>
+    )
+  }
+  <slot />
 </aside>
