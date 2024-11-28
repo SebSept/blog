@@ -18,6 +18,9 @@ preview: start
 build: start
     {{yarn}} build
 
+check: start
+    {{yarn}} astro check
+
 lint:
     {{yarn}} format
     {{yarn}} eslint
