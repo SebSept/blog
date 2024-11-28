@@ -24,7 +24,10 @@ const getUniqueTags = (posts: CollectionEntry<"blog">[]) => {
       (value, index, self) =>
         self.findIndex(tag => tag.tag === value.tag) === index
     )
-    .sort((tagA, tagB) => tagA.tag.localeCompare(tagB.tag));
+    // tri alphabétique d'origine
+    // .sort((tagA, tagB) => tagA.tag.localeCompare(tagB.tag));
+    // tri par nombre d'occurrences
+    .sort((tagA, tagB) => tagB.count - tagA.count);
   return tags;
 };
 
