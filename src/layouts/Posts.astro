@@ -21,8 +21,8 @@ const { page } = Astro.props;
   <Main pageTitle="Billets" pageDesc="Tous mes posts.">
     <ul>
       {
-        page.data.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}/`} frontmatter={data} />
+        page.data.map(({ data }) => (
+          <Card href={`/posts/${data.slug}/`} frontmatter={data} />
         ))
       }
     </ul>

@@ -5,6 +5,7 @@ import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 // import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
@@ -29,7 +30,7 @@ const {
   editPost,
 } = post.data;
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 // filtrage des tags, on ne garde que ceux qui sont listés
 const uniqueTags = getUniqueTags(posts).map(t => t.tag);
@@ -54,12 +55,12 @@ const layoutProps = {
 
 /* ========== Prev/Next Posts ========== */
 
-const allPosts = posts.map(({ data: { title }, slug }) => ({
-  slug,
-  title,
+const allPosts = posts.map(post => ({
+  slug: post.data.slug,
+  title: post.data.title,
 }));
 
-const currentPostIndex = allPosts.findIndex(a => a.slug === post.slug);
+const currentPostIndex = allPosts.findIndex(post => post.slug === post.slug);
 
 const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
 const nextPost =

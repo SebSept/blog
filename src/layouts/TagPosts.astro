@@ -8,6 +8,7 @@ import Pagination from "@components/Pagination.astro";
 import { SITE } from "@config";
 import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 import Callout from "../components/Callout/Callout.astro";
 
 export interface Props {
@@ -21,7 +22,7 @@ const { page, tag, tagName, tagDescription } = Astro.props;
 const count = page.data.length;
 const word_note = count > 1 ? "notes" : "note";
 const { Content: TagDescription } = tagDescription
-  ? await tagDescription.render()
+  ? await render(tagDescription)
   : {};
 ---
 
@@ -44,8 +45,8 @@ const { Content: TagDescription } = tagDescription
     }
     <ul>
       {
-        page.data.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}/`} frontmatter={data} />
+        page.data.map(({ data }) => (
+          <Card href={`/posts/${data.slug}/`} frontmatter={data} />
         ))
       }
     </ul>
