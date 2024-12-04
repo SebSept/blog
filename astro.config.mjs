@@ -12,12 +12,12 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: SITE.website,
   integrations: [
+    mdx(),
     tailwind({
       applyBaseStyles: false,
     }),
     react(),
-    sitemap(),
-    mdx(),
+    sitemap()
   ],
   markdown: {
     remarkPlugins: [
