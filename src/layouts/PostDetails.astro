@@ -63,9 +63,9 @@ const allPosts = posts.map(post => ({
 
 const currentPostIndex = allPosts.findIndex(_post => _post.slug === slug);
 
-const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
-const nextPost =
-  currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+const nextPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
+const prevPost = currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+
 ---
 
 <Layout {...layoutProps}>
