@@ -16,6 +16,7 @@ const {
   disabled = false,
   download = false,
 } = Astro.props;
+
 ---
 
 {
@@ -33,7 +34,7 @@ const {
       class:list={["group inline-block hover:text-skin-accent", className]}
       aria-label={ariaLabel}
       title={title}
-      {download}
+      {...download && { download }}
     >
       <slot />
     </a>
