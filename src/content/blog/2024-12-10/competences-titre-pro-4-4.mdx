@@ -1,0 +1,160 @@
+---
+title: "📑 Dossier De Projet - 4/4 - Concevoir et développer une application multicouche - Tests et déploiement"
+pubDatetime: 2024-12-09
+draft: false
+tags: ["tests", "docker", "titrepro"]
+slug: "competences-titre-pro-4-4"
+description: "Mon dossier de projet professionnel - 4/4 Construction, tests et déploiement"
+featured: false
+---
+
+import Callout from '/src/components/Callout/Callout.astro'
+
+<Callout>Ce dernier article de la série explore les aspects techniques de la construction, du test et du déploiement de l'application. J'explique rapidement ici comment j'ai mis en œuvre une approche DevOps complète, de l'écriture du code jusqu'à la mise en production.</Callout>
+
+Pour le stack technique, vous pouvez vous référer à [l'article précédent de cette série](/posts/competences-titre-pro-3-4).
+
+## Construction de l'application en couches
+
+L'application cliente est structurée selon le pattern MVC (Modèle-Vue-Contrôleur) proposé par Symfony. Cette architecture en couches permet une séparation claire des responsabilités :
+
+- La couche présentation est gérée par le moteur de templates Twig
+- La couche métier comprend le service d'API et les objets DTO
+- La couche persistance se limite aux requêtes vers l'API
+
+Cette séparation se reflète dans l'organisation du code. Par exemple, pour la gestion des séjours hospitaliers :
+
+```php
+class HospitalStayController extends AbstractController
+{
+    #[Route('/secretary/checkout/{hospitalStayId}', name: 'app_hospital_stay_checkout')]
+    public function checkoutEntry(int $hospitalStayId): RedirectResponse
+    {
+        $this->apiService->checkoutEntry($hospitalStayId);
+        $this->addFlash('success', 'Sortie enregistrée.');
+        return $this->redirectToRoute('app_secretary_home');
+    }
+}
+```
+
+Le contrôleur reste minimal et délègue le traitement au service d'API, illustrant parfaitement la séparation des responsabilités.
+
+## Développement de l'application mobile
+
+Pour l'application mobile, j'ai choisi une approche pragmatique avec Flutter. L'application se présente comme une webview affichant le client web :
+
+```dart
+class WebViewApp extends StatefulWidget {
+  const WebViewApp({super.key});
+
+  @override
+  State<WebViewApp> createState() => _WebViewAppState();
+}
+
+class _WebViewAppState extends State<WebViewApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: WebViewWidget(
+        controller: _MyWebViewController(),
+      ),
+    );
+  }
+}
+```
+
+Cette approche minimaliste mais efficace permet de :
+- Réutiliser l'interface web déjà développée
+- Bénéficier de l'approche mobile-first du client web
+- Minimiser la maintenance en centralisant les évolutions
+
+## Stratégie de tests
+
+J'ai structuré les tests en trois phases distinctes :
+
+1. Tests de développement : approche TDD, tests unitaires systématiques
+2. Tests de conformité : vérification des exigences fonctionnelles
+3. Tests de sécurité : utilisation d'outils spécialisés comme sqlmap
+
+Voici un exemple de test vérifiant les autorisations :
+
+```php
+public function testADoctorCannotCreateAnHospitalStay(): void
+{
+    // Arrange
+    $doctorUser = UserFactory::new()->doctor()->create();
+    $doctor = $doctorUser->getDoctor();
+
+    // Act
+    $this->browser()->actingAs($doctorUser->object())
+        ->post(
+            '/api/hospital_stays',
+            HttpOptions::json([
+                'startDate' => '2024-01-01',
+                'reason' => 'Mal de tête',
+                // ...
+            ]));
+
+    // Assert
+    ->assertStatus(403);
+}
+```
+
+Ces tests, intégrés dans la chaîne d'intégration continue, assurent la stabilité du code.
+
+## Déploiement automatisé
+
+Le déploiement repose sur une chaîne d'intégration continue GitHub Actions :
+
+```yaml
+name: Deployment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  integration:
+    uses: ./.github/workflows/integration.yaml
+    secrets: inherit
+  deploy:
+    needs: integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deployment
+        uses: appleboy/ssh-action@f9163462563f649b27272d32e585525a5fe68d76
+        with:
+          host: api.ecf.seb7.fr
+          username: root
+          key: ${{ secrets.SERVER_SSH_KEY }}
+```
+
+L'infrastructure est gérée via Docker Compose, permettant une mise à jour atomique de l'ensemble des services :
+
+```yaml
+services:
+  php:
+    image: ghcr.io/sebsept/docker-php-symfony-starter:prod
+    volumes:
+      - ./:/app
+    networks:
+      - nginx
+      - postgres
+  nginx:
+    image: nginx:1.26.0
+    volumes:
+      - ./docker/nginx_prod.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/app/public
+```
+
+Cette configuration assure :
+- Une mise à jour automatisée du code et des conteneurs
+- Une persistance des données via des volumes Docker
+- Une isolation des services par des réseaux dédiés pour une sécurité optimale
+
+## Conclusion
+
+La mise en place d'une architecture en couches, couplée à une stratégie de tests rigoureuse et un déploiement automatisé, a permis de livrer une solution robuste et maintenable. Cette approche DevOps complète garantit la qualité du code et simplifie les évolutions futures.
+
+L'ensemble des articles de cette série démontre comment une approche méthodique, de la conception au déploiement, permet de réaliser un projet complexe tout en maintenant un haut niveau de qualité.
+
+Si vous souhaitez entrer dans les détails, mon dossier de projet est [disponible en téléchargement](http://dev.seb7.fr/dossier_de_projet.pdf).
