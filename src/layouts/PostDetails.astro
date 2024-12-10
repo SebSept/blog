@@ -28,6 +28,7 @@ const {
   modDatetime,
   tags,
   editPost,
+  slug,
 } = post.data;
 
 const { Content } = await render(post);
@@ -60,7 +61,7 @@ const allPosts = posts.map(post => ({
   title: post.data.title,
 }));
 
-const currentPostIndex = allPosts.findIndex(post => post.slug === post.slug);
+const currentPostIndex = allPosts.findIndex(_post => _post.slug === slug);
 
 const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
 const nextPost =
