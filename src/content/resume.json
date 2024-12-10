@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "basics": {
+    "name": "Sébastien Monterisi",
+    "label": "Développeur fullstack PHP",
+    "email": "sebastienmonterisi@gmail.com",
+    "phone": "06.75.16.33.36",
+    "summary": "J'ai exercé en freelance et en agence pendant 15 ans. Je souhaite maintenant rejoindre une équipe avec des valeurs humaines fortes travaillant sur des projets riches. J'aime le code propre, les applications bien conçues et l'amélioration constante.",
+    "location": {
+      "city": "Caen",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com"
+      },
+      {
+        "network": "Mastodon",
+        "url": "https://mastodon.social"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "410-gone.fr",
+      "position": "Lead développeur PHP / PrestaShop",
+      "startDate": "2022-05",
+      "endDate": "2023-08",
+      "highlights": [
+        "développements PrestaShop (module de synchronisation complète avec une marketplace)",
+        "formation des alternants (revue de code, assistance, etc)",
+        "mise en place de bases techniques de référence (module d'exemple, questions)",
+        "mise en place d'un cadre pour les audits de sécurité et performance (réalisation de 3 audits)",
+        "initiation du déploiement et de l'intégration continue"
+      ]
+    },
+    {
+      "name": "prestashop.seb7.fr",
+      "position": "Freelance Prestashop",
+      "startDate": "2010",
+      "endDate": "2022",
+      "highlights": [
+        "modules sur mesure (scrapping quotidien et intégration au catalogue de 6000 références)",
+        "montées de versions, sécurisation, etc (~10 montées mineures, 5 montées majeurs)"
+      ]
+    },
+    {
+      "name": "Alfos web",
+      "position": "Développeur PHP",
+      "startDate": "2008",
+      "endDate": "2010",
+      "highlights": [
+        "développement du site e-commerce propriétaire",
+        "développement et installation des sites CMS propriétaire (10 sites en production)"
+      ]
+    },
+    {
+      "name": "Freelance",
+      "position": "Développeur web & formateur informatique",
+      "startDate": "2005",
+      "endDate": "2007"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Non spécifié",
+      "area": "Concepteur développeur d'applications",
+      "studyType": "Titre professionnel",
+      "startDate": "2024",
+      "endDate": "2024"
+    },
+    {
+      "institution": "Non spécifié",
+      "area": "Psychologie cognitive – Ergonomie des interfaces homme-machine",
+      "studyType": "DESS",
+      "startDate": "2004",
+      "endDate": "2004"
+    },
+    {
+      "institution": "Non spécifié",
+      "studyType": "Baccalauréat scientifique",
+      "startDate": "1996",
+      "endDate": "1996"
+    }
+  ],
+  "skills": [
+    {
+      "name": "PHP",
+      "level": "Expert"
+    },
+    {
+      "name": "Symfony",
+      "level": "Intermediate"
+    },
+    {
+      "name": "JQuery",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Bootstrap",
+      "level": "Intermediate"
+    },
+    {
+      "name": "HTML/CSS",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Linux/Docker",
+      "level": "Intermediate"
+    },
+    {
+      "name": "Git/GitHub",
+      "level": "Intermediate"
+    },
+    {
+      "name": "MySQL/PostgreSQL/SQLite",
+      "level": "Intermediate"
+    },
+    {
+      "name": "PrestaShop",
+      "level": "Expert"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Anglais",
+      "fluency": "B2"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Badminton",
+      "keywords": ["en club"]
+    },
+    {
+      "name": "Trail running"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+---
+export interface Props {
+  basics: {
+    name: string;
+    label: string;
+    email: string;
+    phone: string;
+    summary: string;
+    location: {
+      city: string;
+      countryCode: string;
+    };
+    profiles: {
+      network: string;
+      url: string;
+    }[];
+  };
+}
+
+const { basics } = Astro.props;
+---
+
+<div class="mb-8">
+  <h2 class="text-2xl font-bold mb-4">{basics.name} - {basics.label}</h2>
+  <div class="mb-4">
+    <p>{basics.email} | {basics.phone}</p>
+    <p>{basics.location.city}, {basics.location.countryCode}</p>
+  </div>
+  <p class="mb-4">{basics.summary}</p>
+  <div class="flex gap-4">
+    {basics.profiles.map(profile => (
+      <a href={profile.url} target="_blank" rel="noopener noreferrer"
+         class="hover:text-skin-accent">
+        {profile.network}
+      </a>
+    ))}
+  </div>
+</div>

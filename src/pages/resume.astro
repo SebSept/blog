@@ -1,0 +1,25 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import resume from "@content/resume.json";
+import Basics from "../components/Resume/Basics.astro";
+import Work from "../components/Resume/Work.astro";
+import Education from "../components/Resume/Education.astro";
+import Skills from "../components/Resume/Skills.astro";
+---
+
+<Layout title="CV">
+  <Header />
+
+  <main id="main-content" class="mx-auto max-w-3xl px-4">
+    <h1 class="text-center text-3xl p-4">Curriculum Vitae</h1>
+    <Basics basics={resume.basics} />
+    <Work work={resume.work} />
+    <Education education={resume.education} />
+    <Skills skills={resume.skills} />
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,21 @@
+---
+export interface Props {
+  skills: {
+    name: string;
+    level: string;
+  }[];
+}
+
+const { skills } = Astro.props;
+---
+
+<div class="mb-8">
+  <h2 class="text-2xl font-bold mb-4">Compétences</h2>
+  <div class="flex flex-wrap gap-2">
+    {skills.map(skill => (
+      <span class="bg-skin-card px-3 py-1 rounded">
+        {skill.name} ({skill.level})
+      </span>
+    ))}
+  </div>
+</div>
