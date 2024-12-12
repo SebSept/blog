@@ -1,0 +1,51 @@
+---
+title: "Usage raisonné des llm"
+pubDatetime: 2024-12-12
+draft: true
+tags: ["ia", "claude", "rédaction"]
+slug: "usage-raisonne-llm"
+description: "Quelques réflexions sur l'usage raisonné des modèles de langage"
+featured: false
+---
+
+import Callout from '/src/components/Callout/Callout.astro'
+
+La _hype_ sur les modèles de langage étendu (llm) est en passe de prendre fin. Les plus enthousiastes (ou alarmistes) ont prédit la fin du métier de développeur, les plus pessimistes ont vu un appauvrissement de la qualité et de la fiabilité des applications. D'un coté certains ont indiqué qu'il fallait se lancer sans attendre dans l'adoption systématique des ia, de l'autre ceux qui la rejette en bloc. Ces deux positions sont extrêmes et ratent l'essentiel. Les llm sont des outils et un bon usage est possible, tant pour faciliter le travail des développeurs que pour produire des meilleurs applications.
+
+## Le pire des usages
+
+### Penser que ces llm disent la vérité
+
+Vous avez surement pu lire les déboires de certaines personnes qui ont demandé à ChatGPT de faire leur travail sans prendre de recul. [Le cas de cette animatrice tv](https://lesnews.ca/intelligence-artificielle/chatgpt/co-animatrice-de-the-view-accuse-chatgpt-apres-une-affirmation-explosive-sur-le-pardon-de-biden/) qui tient des propos complètement faux en est un exemple. Je me souviens aussi d'un avocat qui à livré une plaidoirie utilisant des références complètements fictives. Demander maladroitement à une ia de vous écrire une lettre de motivation et elle vous inventera de belles compétences.
+
+<Callout>
+  Les llm génèrent des tokens, rien de plus. Quand vous voyez les mots s'afficher un à un, ça n'est pas lié a une lenteur qui ferait qu'un contenu construit arrive progressivement. Le contenu est généré de cette façon, token par token, sans travail préalable sur le sens, sans prévoir ce qu'il va _dire_.
+
+  Les llm ne produisent pas de sens, ils produisent des tokens qui forment un contenu *vraisemblable*. Si le llm n'a pas de matière, il va en inventer.
+
+  Pour le dire trivialement, les llm ne font que pisser des tokens. C'est caricatural mais puisque l'Homme construit du sens un peu trop facilement, on peut contrebalancer en disant que les llm ne font que pisser des tokens.
+</Callout>
+
+J'ai regardé [cette vidéo de Monsieur Phi](https://www.youtube.com/watch?v=_XJsAQsT0Bo&t=40s) à sa sortie, ça m'a bien aidé à ne pas ceder à la _hype_.
+
+### Utiliser le code généré sans le comprendre
+
+Pour le code, on peut moins facilement se laisser abuser, on constate actuellement du code qui pose question ou mieux qui ne fonctionne pas. Cependant on peut être tenté de l'utiliser pour être rapide, on sait où cela mène quand on a peu d'expérience. Le point important, c'est surtout que quand ce code dysfonctionnera plus tard, il sera plus difficile de le corriger et c'est ce point qui est vraiment problématique.
+
+## Les bons usages
+
+### Utiliser les llm pour générer des idées
+
+Vous avez réfléchi à un problème, vous avez une idée de solution mais vous n'arrivez pas à la formuler. Demandez à un llm de vous aider. Vous aurez une base de travail, vous pourrez la retravailler, la modifier, la compléter, etc. C'est un bon moyen de débloquer une situation. Il faut bien garder à l'esprit que ce contenu est vraisemblable, c'est de la matière pour votre cerveau, pas souvent une solution toute faite.
+
+### Utiliser les llm pour générer des contenus
+
+Par habitude, je repère maintenant facilement le contenu généré par chatGPT, le style est plat, commercial, manque d'humilité, est plat, consensuel et ennuyeux. Pour générer du contenu qualitatif qui reflète votre style, il faut donner à manger au llm.
+
+J'ai délégué l'écriture de mes deux précédents articles ([Dossier De Projet - 3/4](/posts/competences-titre-pro-3-4) & [Dossier De Projet - 4/4](/posts/competences-titre-pro-4-4) ) entièrement à [Claude](https://claude.ai), j'en suis complètement satisfait et vous ne l'avez probablement pas remarqué !
+
+Pour obtenir ce résultat, j'ai utilisé un _projet_ de Claude (on peut faire la même chose avec ChatGPT, il me semble). Dans ce projet, je lui ai fourni mon dossier de projet, le référentiel officiel de la certification, des articles de mon blog et j'ai indiqué ce que je voulais.
+
+### Utiliser les llm pour faire le travail rébarbatif
+
+Plus prosaïquement, on peut utiliser les llm pour générer des tests, des getters/setters, tout ce genre de tâches qui ne demande pas vraiment de réflexion, mais bêtement de tapoter au clavier. Les problèmes sont rares car les taches sont simples et on peux directement vérifier la pertinence des productions, corriger.
